@@ -36,6 +36,17 @@ const membri = [
 
 for( let i in membri){
 
+  card(i);
+}  
+
+ document.getElementById('addMemberButton').addEventListener('click',function(){
+  
+    cardExtra();
+  
+ })
+
+ function card(i){
+
   let teamCard = document.createElement('div');
   teamCard.className=('team-card');
 
@@ -53,10 +64,10 @@ for( let i in membri){
   teamCard.append(cardImage);
   teamCard.append(cardText);
   teamContainer.append(teamCard);
-}  
 
- document.getElementById('addMemberButton').addEventListener('click',function(){
+ }
 
+ function cardExtra (){
   let teamCard = document.createElement('div');
    teamCard.className=('team-card');
 
@@ -74,9 +85,4 @@ for( let i in membri){
    teamCard.append(cardImage);
    teamCard.append(cardText);
    teamContainer.append(teamCard);
-
-   
-
-   console.log(document.getElementById('name').value);
-
- })
+ }
