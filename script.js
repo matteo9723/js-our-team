@@ -1,5 +1,6 @@
 const teamContainer = document.querySelector('.team-container');
 
+let counter = 0;
 
 const membri = [
   {'nome': 'Wayne Barnett',
@@ -27,9 +28,11 @@ const membri = [
    'foto':' img/barbara-ramos-graphic-designer.jpg'
 }
 
-]
+];
 
-// console.log(membri[0].nome);
+ const membriExtra=['img/new-team-member-01.jpg','img/new-team-member-02.jpg','img/new-team-member-03.jpg','img/new-team-member-04.jpg']
+
+//  console.log(membri[0].nome);
 
 for( let i in membri){
 
@@ -51,3 +54,29 @@ for( let i in membri){
   teamCard.append(cardText);
   teamContainer.append(teamCard);
 }  
+
+ document.getElementById('addMemberButton').addEventListener('click',function(){
+
+  let teamCard = document.createElement('div');
+   teamCard.className=('team-card');
+
+   let cardImage = document.createElement('div');
+   cardImage.className=('card-image');
+
+   let cardText = document.createElement('div');
+   cardText.className=('card-text');
+
+   cardImage.innerHTML=`<img src="${membriExtra[document.getElementById('image').value-1]}" alt="">`;
+
+   cardText.innerHTML=`<h3>${document.getElementById('name').value}</h3>
+   <p>${document.getElementById('role').value}</p>`;
+
+   teamCard.append(cardImage);
+   teamCard.append(cardText);
+   teamContainer.append(teamCard);
+
+   
+
+   console.log(document.getElementById('name').value);
+
+ })
