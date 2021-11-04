@@ -86,3 +86,5 @@ for( let i in membri){
    teamCard.append(cardText);
    teamContainer.append(teamCard);
  }
+
+ 
